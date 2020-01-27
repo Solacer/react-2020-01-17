@@ -1,6 +1,7 @@
 import React from 'react'
 import Review from './review'
 import {Col, Row} from 'antd'
+import PropTypes from 'prop-types'
 
 function Reviews({reviews}) {
   return (
@@ -12,6 +13,10 @@ function Reviews({reviews}) {
       </Col>
     </Row>
   )
+}
+
+Reviews.propTypes = {
+  reviews: PropTypes.array.isRequired,
 }
 
 export default Reviews
