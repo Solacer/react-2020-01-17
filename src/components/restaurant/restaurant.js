@@ -7,6 +7,7 @@ import Hero from '../hero'
 import styles from './restaurant.module.css'
 import {Col, Row} from 'antd'
 import Order from '../order'
+import AverageRating from '../average-rating/average-rating'
 
 export const RestaurantProps = {
   restaurant: PropTypes.shape({
@@ -35,7 +36,9 @@ class Restaurant extends Component {
     } = this.props
     return (
       <div data-automation-id="RESTAURANT_CONTAINER">
-        <Hero heading={name}>{/*<AverageRating reviews={reviews} />*/}</Hero>
+        <Hero heading={name}>
+          <AverageRating ids={reviews} />
+        </Hero>
         <Row>
           <Col span={18} className={styles.restaurantContent}>
             <Reviews reviews={reviews} />
