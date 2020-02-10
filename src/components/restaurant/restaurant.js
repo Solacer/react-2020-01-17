@@ -32,7 +32,7 @@ class Restaurant extends Component {
 
   render() {
     const {
-      restaurant: {name, menu, reviews},
+      restaurant: {name, menu, reviews, id},
     } = this.props
     return (
       <div data-automation-id="RESTAURANT_CONTAINER">
@@ -41,7 +41,7 @@ class Restaurant extends Component {
         </Hero>
         <Row>
           <Col span={18} className={styles.restaurantContent}>
-            <Reviews reviews={reviews} />
+            <Reviews reviews={reviews} restaurantId={id} />
             <Dishes menu={menu} />
           </Col>
           <Col span={6}>

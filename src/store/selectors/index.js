@@ -6,7 +6,7 @@ export const selectIds = (state, ownProps) => ownProps.ids
 
 export const selectCart = state => state.cart
 
-export const selectRestaurantList = state => state.restaurants
+export const selectRestaurantList = state => Object.values(state.restaurants)
 
 export const selectDishes = state => state.dishes
 
