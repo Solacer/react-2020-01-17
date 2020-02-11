@@ -29,6 +29,7 @@ const ReviewForm = ({id}) => {
     )
     resetForm()
   }
+  const isPublishEnabled = () => (userName.length > 0 && userReview.length > 0 && userRating > 0);
   return (
     <Card className={styles.reviewForm}>
       <Row type="flex" align="middle">
@@ -52,7 +53,7 @@ const ReviewForm = ({id}) => {
             <div>
               Rating: <Rate onChange={setUserRating} value={userRating} />
             </div>
-            <Button htmlType="submit" className={styles.submitButton}>
+            <Button htmlType="submit" disabled={!isPublishEnabled()} className={styles.submitButton}>
               PUBLISH REVIEW
             </Button>
           </Form>
